@@ -1,0 +1,21 @@
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		Scanner sc=new Scanner(System.in);
+		int maxSum=0;
+		int currS=0;
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++)
+		arr[i]=sc.nextInt();
+		for(int i=0;i<n;i++)
+		{
+		    currS=Math.max(currS+arr[i],arr[i]);
+		    maxSum = Math.max(maxSum, currS);
+		}
+		System.out.println(maxSum);
+	}
+}
