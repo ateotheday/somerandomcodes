@@ -1,0 +1,39 @@
+//greedy
+Coin fits (exh >= coin) → take it, reduce exh, try same coin again
+Coin too big → skip to next smaller coin
+exh = 0 → done...
+
+
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		//System.out.println("Hello World");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int count=0;
+	
+		int arr[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+		    arr[i]=sc.nextInt();
+		}
+		Arrays.sort(arr);
+		int t=sc.nextInt();
+		int exh=t;
+		for(int i=n-1;i>=0;i--)
+		{
+		    if(exh==0)
+		    break;
+		    
+		    while(exh>0 && exh>=arr[i]){
+		    exh=exh-arr[i];
+		    count++;
+		    }
+		    continue;
+	}
+	System.out.print(count);
+}
+}
